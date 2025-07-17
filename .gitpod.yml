@@ -1,0 +1,21 @@
+---
+# .gitpod.yml
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: DevOps Setup
+    init: bash setup-devops-tools.sh
+    command: echo "✅ DevOps environment ready!"
+
+vscode:
+  extensions:
+    - hashicorp.terraform
+    - ms-azuretools.vscode-docker
+    - ms-kubernetes-tools.vscode-kubernetes-tools
+    - eamodio.gitlens
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+
