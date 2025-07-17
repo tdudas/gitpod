@@ -5,7 +5,7 @@ image:
 
 tasks:
   - name: DevOps Setup
-    init: bash setup-devops-tools.sh
+    init: bash setup_tools.sh
     command: echo "✅ DevOps environment ready!"
 
 vscode:
