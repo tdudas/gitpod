@@ -1,4 +1,4 @@
-FROM rockylinux:9
+FROM public.ecr.aws/docker/library/rockylinux:9
 
 RUN dnf -y update && \
     dnf install -y \
