@@ -1,3 +1,4 @@
+# gitpod
 image:
   file: .gitpod.Dockerfile
 
@@ -6,24 +7,15 @@ tasks:
     init: ./setup_tools.sh
     command: echo "✅ Environment ready"
 
-devContainer:
-  features:
-    ghcr.io/devcontainers/features/common-utils: 1
-    ghcr.io/devcontainers/features/git: 1
-    ghcr.io/devcontainers/features/node: {
-      version: "20"
-    }
+ports:
+  - port: 3000
+    onOpen: open-preview
 
-gitpod:
-  ports:
-    - port: 3000
-      onOpen: open-preview
-  vscode:
-    extensions:
-      - hashicorp.terraform
-      - ms-azuretools.vscode-docker
-      - redhat.vscode-yaml
-      - ms-kubernetes-tools.vscode-kubernetes-tools
-      - amazonwebservices.aws-toolkit-vscode
-      - eamodio.gitlens
-
+vscode:
+  extensions:
+    - hashicorp.terraform
+    - ms-azuretools.vscode-docker
+    - redhat.vscode-yaml
+    - ms-kubernetes-tools.vscode-kubernetes-tools
+    - amazonwebservices.aws-toolkit-vscode
+    - eamodio.gitlens
