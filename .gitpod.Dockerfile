@@ -4,7 +4,7 @@ RUN dnf install -y epel-release
 
 RUN dnf -y update && \
     dnf install -y \
-      curl unzip git wget \
+      nzip git wget \
       vim tmux fzf \
       bind-utils \
       tar gzip findutils shadow-utils \
