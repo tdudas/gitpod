@@ -1,12 +1,12 @@
 ---
 # .gitpod.yml
 image:
-  file: .gitpod.Dockerfile
+  file: .gitpod.Dockerfile.Rocky
 
 tasks:
-  - name: DevOps Setup
+  - name: Env Setup
     init: bash setup_tools.sh
-    command: echo "✅ DevOps environment ready!"
+    command: echo "Environment ready!"
 
 vscode:
   extensions:
