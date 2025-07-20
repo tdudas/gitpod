@@ -3,9 +3,9 @@ FROM public.ecr.aws/docker/library/rockylinux:9
 RUN dnf install -y epel-release
 
 RUN dnf -y update && \
-    dnf install -y \
+    dnf install -y --allowerasing \
       nzip git wget \
-      vim tmux fzf \
+      curl vim tmux fzf \
       bind-utils \
       tar gzip findutils shadow-utils \
       which hostname \
