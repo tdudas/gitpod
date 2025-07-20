@@ -1,8 +1,12 @@
-FROM ubuntu:20.04
+FROM rockylinux:9
 
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update && apt-get install -y \
-  curl unzip git wget software-properties-common \
-  vim tmux fzf gnupg lsb-release ca-certificates apt-transport-https \
-  && rm -rf /var/lib/apt/lists/*
+RUN dnf -y update && \
+    dnf install -y \
+      curl unzip git wget \
+      vim tmux fzf \
+      tar gzip findutils shadow-utils \
+      which hostname \
+      dnf-plugins-core \
+      bash-completion \
+      sudo \
+      && dnf clean all

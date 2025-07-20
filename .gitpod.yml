@@ -1,21 +1,29 @@
----
-# .gitpod.yml
 image:
-  file: .gitpod.Dockerfile.Rocky
+  file: .gitpod.Dockerfile
 
 tasks:
-  - name: Env Setup
-    init: bash setup_tools.sh
-    command: echo "Environment ready!"
+  - name: Install tools
+    init: ./setup_tools.sh
+    command: echo "✅ Environment ready"
 
-vscode:
-  extensions:
-    - hashicorp.terraform
-    - ms-azuretools.vscode-docker
-    - ms-kubernetes-tools.vscode-kubernetes-tools
-    - eamodio.gitlens
+devContainer:
+  features:
+    ghcr.io/devcontainers/features/common-utils: 1
+    ghcr.io/devcontainers/features/git: 1
+    ghcr.io/devcontainers/features/node: {
+      version: "20"
+    }
 
-ports:
-  - port: 8080
-    onOpen: open-preview
+gitpod:
+  ports:
+    - port: 3000
+      onOpen: open-preview
+  vscode:
+    extensions:
+      - hashicorp.terraform
+      - ms-azuretools.vscode-docker
+      - redhat.vscode-yaml
+      - ms-kubernetes-tools.vscode-kubernetes-tools
+      - amazonwebservices.aws-toolkit-vscode
+      - eamodio.gitlens
 
