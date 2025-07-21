@@ -21,4 +21,4 @@ RUN groupadd -g 33333 gitpod && \
 RUN dnf -y install sudo shadow-utils && \
     mkdir -p /etc/sudoers.d && \
     echo "gitpod ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/gitpod && \
-    chmod 0440 /etc/sudoers.d/gitpodhttps://cloudev.roche.com/workspaces
+    chmod 0440 /etc/sudoers.d/gitpod
