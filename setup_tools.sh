@@ -1,13 +1,6 @@
 #!/bin/bash
 set -e
 
-# Upewnij się, że system jest zaktualizowany
-# sudo dnf update -y
-# sudo dnf install -y dnf-plugins-core curl unzip git vim tmux tar findutils
-
-# # EPEL dla fzf
-# sudo dnf install -y fzf
-
 # Node.js 20
 curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
 sudo dnf install -y nodejs
@@ -74,7 +67,7 @@ sudo mv argocd /usr/local/bin/
 # AWS CDK v2
 sudo npm install -g aws-cdk@2
 
-# Aliasy
+# Aliases
 echo '
 # Custom aliases
 alias tf="terraform"
@@ -85,7 +78,7 @@ alias kge="kubectl get events --sort-by=.metadata.creationTimestamp"
 alias awsp='\''export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ~/.aws/config | fzf)'\'
 ' >> ~/.bashrc
 
-# Załaduj aliasy
+# load aliases
 source ~/.bashrc
 
 echo "Instalation completed."
