@@ -2,12 +2,11 @@
 set -e
 
 # Upewnij się, że system jest zaktualizowany
-sudo dnf update -y
-sudo dnf install -y dnf-plugins-core curl unzip git vim tmux tar findutils
+# sudo dnf update -y
+# sudo dnf install -y dnf-plugins-core curl unzip git vim tmux tar findutils
 
-# EPEL dla fzf
-sudo dnf install -y epel-release
-sudo dnf install -y fzf
+# # EPEL dla fzf
+# sudo dnf install -y fzf
 
 # Node.js 20
 curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
