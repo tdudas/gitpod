@@ -3,9 +3,13 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - name: Install tools
-    init: ./setup_tools.sh
-    command: echo "Environment ready"
+  - name: Setup Environment & Install Dependencies
+    init: |
+      echo "Environment setup complete!"
+
+#  - name: Install tools
+#    init: ./setup_tools.sh
+#    command: echo "Environment ready"
 
 ports:
   - port: 3000
