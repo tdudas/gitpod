@@ -14,6 +14,10 @@ tasks:
 ports:
   - port: 3000
     onOpen: open-preview
+  - port: 5900
+    onOpen: ignore
+  - port: 5901
+    onOpen: ignore
 
 vscode:
   extensions:

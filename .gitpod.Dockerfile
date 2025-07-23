@@ -17,7 +17,7 @@ FROM public.ecr.aws/docker/library/rockylinux:9 AS final
 
 USER root
 
-# DNS packages
+# DNF packages
 RUN dnf install -y epel-release
 
 RUN dnf -y update && \
@@ -29,19 +29,16 @@ RUN dnf -y update && \
       which hostname \
       dnf-plugins-core \
       bash-completion \
-      sudo vim \
+      sudo vim net-tools \
+      firefox tigervnc-server xorg-x11-server-Xvfb \
       && dnf clean all
 
-# Ustawienie zmiennych środowiskowych (brak potrzeby DEBIAN_FRONTEND)
 ENV TZ=UTC
 
-# Skopiuj certyfikaty z poprzedniego etapu
 COPY --from=r-certs /certs /etc/pki/ca-trust/source/anchors
 
-# Zaktualizuj certyfikaty
 RUN update-ca-trust extract
 
-# Ustaw certyfikat jako domyślny dla aplikacji
 ENV SSL_CERT_FILE=/etc/pki/tls/certs/ca-bundle.crt \
     REQUESTS_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
 
