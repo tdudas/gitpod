@@ -13,10 +13,15 @@ tasks:
 
 ports:
   - port: 3000
+    description: The main application web server
     onOpen: open-preview
   - port: 5900
+    description: VNC Server
     onOpen: ignore
   - port: 5901
+    onOpen: ignore
+  - port: 6080
+    description: VNC Viewer
     onOpen: ignore
 
 vscode:
