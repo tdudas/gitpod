@@ -1,0 +1,104 @@
+[default]
+region=eu-central-1
+output=json
+cli_pager=
+
+[profile azure]
+azure_tenant_id = c8036283-1408-4dc8-b870-31e789a0a528
+azure_app_id_uri = a3124e43-bf2c-4006-a62d-44bb3a39accf
+azure_default_duration_hours = 8
+azure_default_username=dutkiewt@emea.roche.com
+region=eu-central-1
+
+[profile azure-apps-prod]
+output=json
+azure_tenant_id=c8036283-1408-4dc8-b870-31e789a0a528
+azure_app_id_uri=a3124e43-bf2c-4006-a62d-44bb3a39accf
+azure_default_username=dutkiewt@emea.roche.com
+azure_default_role_arn=arn:aws:iam::238238567905:role/ROLE-PRED-MINERVA-APPS-01-PRD-AWSPWUSR
+azure_default_duration_hours=10
+region=eu-central-1
+
+[profile TECH-EVAL]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=976188216412
+sso_role_name=common-usecase-pwrusr
+region=eu-central-1
+
+[profile TECH-EVAL-US1]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=976188216412
+sso_role_name=common-usecase-pwrusr
+region=us-east-1
+
+[profile SANDBOX]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=451655153572
+sso_role_name=common-usecase-pwrusr
+region=eu-central-1
+
+[profile APPS-UAT]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=322768879714
+sso_role_name=common-usecase-pwrusr
+region=eu-central-1
+
+[profile APPS-PROD]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=238238567905
+sso_role_name=common-usecase-pwrusr
+region=eu-central-1
+
+[profile SHARED-UAT]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=616062498746
+sso_role_name=common-usecase-pwrusr
+region=eu-central-1
+
+[profile SHARED-PROD]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=560692168484
+sso_role_name=common-usecase-pwrusr
+region=eu-central-1
+
+[profile DR-APPS-UAT]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=610119268816
+sso_role_name=common-usecase-pwrusr
+region=eu-central-1
+
+[profile DR-APPS-PROD]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=129581631257
+sso_role_name=common-usecase-pwrusr
+region=eu-central-1
+
+[profile DR-SHARED-UAT]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=885947093856
+sso_role_name=common-usecase-pwrusr
+region=eu-central-1
+
+[profile DR-SHARED-PROD]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=585869674603
+sso_role_name=common-usecase-pwrusr
+region=eu-central-1
+
+[profile SEC-UAT-01]
+sso_start_url=https://d-996713358d.awsapps.com/start
+sso_region=eu-central-1
+sso_account_id=807528945687
+sso_role_name=common-usecase-pwrusr
+region=eu-central-1

@@ -6,10 +6,10 @@ tasks:
   - name: Setup Environment & Install Dependencies
     init: |
       echo "Environment setup complete!"
-
-#  - name: Install tools
-#    init: ./setup_tools.sh
-#    command: echo "Environment ready"
+  - name: "AWS profiles"
+    init: |
+      mkdir -p ~/.aws
+      cp aws_profiles ~/.aws/config
 
 ports:
   - port: 3000
