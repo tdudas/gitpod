@@ -10,6 +10,10 @@ tasks:
     init: |
       mkdir -p ~/.aws
       cp aws_profiles ~/.aws/config
+  - name: Start desktop
+    init: supervisorctl start all
+    command: |
+      echo "Access the GUI at: https://${GITPOD_WORKSPACE_URL/https:\/\//6080-}.gitpod.io"
 
 ports:
   - port: 3000

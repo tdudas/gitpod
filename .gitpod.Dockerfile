@@ -23,15 +23,36 @@ RUN dnf install -y epel-release
 RUN dnf -y update && \
     dnf install -y --allowerasing \
       unzip git wget \
-      curl tmux \
+      curl tmux procps-ng \
       bind-utils telnet \
       tar gzip findutils shadow-utils \
       which hostname \
       dnf-plugins-core \
       bash-completion openldap-clients \
       sudo vim net-tools \
-      firefox tigervnc-server xorg-x11-server-Xvfb \
       && dnf clean all
+
+## VNC SETTING
+RUN dnf -y install epel-release && \
+    dnf -y install \
+    xfce4-panel xfce4-session xfce4-settings xfconf xfce4-terminal \
+    xorg-x11-server-Xvfb x11vnc \
+    chromium \
+    gnupg python3 supervisor \
+    fontconfig libXcomposite libXcursor libXdamage libXrandr libXScrnSaver alsa-lib atk at-spi2-atk at-spi2-core cups-libs gtk3 libdrm libxshmfence libgbm libXtst libnss3 libxkbcommon && \
+    dnf clean all
+
+# Instalacja noVNC
+RUN mkdir -p /opt/novnc/utils/websockify && \
+    wget https://github.com/novnc/noVNC/archive/refs/heads/master.zip -O /tmp/novnc.zip && \
+    unzip /tmp/novnc.zip -d /opt && \
+    mv /opt/noVNC-master /opt/novnc && \
+    wget https://github.com/novnc/websockify/archive/refs/heads/master.zip -O /tmp/websockify.zip && \
+    unzip /tmp/websockify.zip -d /opt/novnc/utils && \
+    mv /opt/novnc/utils/websockify-master /opt/novnc/utils/websockify
+
+COPY supervisord.conf /etc/supervisord.conf
+##
 
 ENV TZ=UTC
 
