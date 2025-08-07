@@ -39,7 +39,7 @@ RUN dnf -y install epel-release && \
     xorg-x11-server-Xvfb x11vnc \
     chromium \
     gnupg python3 supervisor \
-    fontconfig libXcomposite libXcursor libXdamage libXrandr libXScrnSaver alsa-lib atk at-spi2-atk at-spi2-core cups-libs gtk3 libdrm libxshmfence libgbm libXtst libnss3 libxkbcommon && \
+    fontconfig libXcomposite libXcursor libXdamage libXrandr libXScrnSaver alsa-lib atk at-spi2-atk at-spi2-core cups-libs gtk3 libdrm libxshmfence libgbm libXtst nss libxkbcommon && \
     dnf clean all
 
 # Instalacja noVNC
