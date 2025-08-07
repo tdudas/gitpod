@@ -28,7 +28,7 @@ RUN dnf -y update && \
       tar gzip findutils shadow-utils \
       which hostname \
       dnf-plugins-core \
-      bash-completion \openldap-clients \
+      bash-completion openldap-clients \
       sudo vim net-tools \
       firefox tigervnc-server xorg-x11-server-Xvfb \
       && dnf clean all
