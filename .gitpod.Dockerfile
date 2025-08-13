@@ -32,26 +32,15 @@ RUN dnf -y update && \
       sudo vim net-tools \
       && dnf clean all
 
-## VNC SETTING
+## VNC PACKAGES
 RUN dnf -y install epel-release && \
     dnf -y install \
     xfce4-panel xfce4-session xfce4-settings xfconf xfce4-terminal \
     xorg-x11-server-Xvfb x11vnc \
-    chromium \
-    gnupg python3 supervisor \
+    chromium novnc procps \
+    gnupg python3 \
     fontconfig libXcomposite libXcursor libXdamage libXrandr libXScrnSaver alsa-lib atk at-spi2-atk at-spi2-core cups-libs gtk3 libdrm libxshmfence libgbm libXtst nss libxkbcommon && \
     dnf clean all
-
-# Instalacja noVNC
-RUN mkdir -p /opt/novnc/utils/websockify && \
-    wget https://github.com/novnc/noVNC/archive/refs/heads/master.zip -O /tmp/novnc.zip && \
-    unzip /tmp/novnc.zip -d /opt && \
-    mv /opt/noVNC-master /opt/novnc && \
-    wget https://github.com/novnc/websockify/archive/refs/heads/master.zip -O /tmp/websockify.zip && \
-    unzip /tmp/websockify.zip -d /opt/novnc/utils && \
-    mv /opt/novnc/utils/websockify-master /opt/novnc/utils/websockify
-
-COPY supervisord.conf /etc/supervisord.conf
 ##
 
 ENV TZ=UTC

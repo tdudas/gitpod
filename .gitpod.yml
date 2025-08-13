@@ -10,10 +10,11 @@ tasks:
     init: |
       mkdir -p ~/.aws
       cp aws_profiles ~/.aws/config
-  - name: Start desktop
-    init: supervisorctl start all
-    command: |
-      echo "Access the GUI at: https://${GITPOD_WORKSPACE_URL/https:\/\//6080-}.gitpod.io"
+  - name: "bashrc"
+    init: |
+      cp bashrc ~/.bashrc
+      source ~/.bashrc
+
 
 ports:
   - port: 3000
@@ -28,11 +29,11 @@ ports:
     description: VNC Viewer
     onOpen: ignore
 
-vscode:
-  extensions:
-    - hashicorp.terraform
-    - ms-azuretools.vscode-docker
-    - redhat.vscode-yaml
-    - ms-kubernetes-tools.vscode-kubernetes-tools
-    - amazonwebservices.aws-toolkit-vscode
-    - eamodio.gitlens
+# vscode:
+#   extensions:
+#     - hashicorp.terraform
+#     - ms-azuretools.vscode-docker
+#     - redhat.vscode-yaml
+#     - ms-kubernetes-tools.vscode-kubernetes-tools
+#     - amazonwebservices.aws-toolkit-vscode
+#     - eamodio.gitlens
