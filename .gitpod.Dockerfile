@@ -36,7 +36,7 @@ RUN dnf -y update && \
 RUN dnf -y install epel-release && \
     dnf -y install \
     xfce4-panel xfce4-session xfce4-settings xfconf xfce4-terminal \
-    xorg-x11-server-Xvfb x11vnc \
+    xorg-x11-server-Xvfb x11vnc tigervnc-server tigervnc \
     chromium novnc procps \
     gnupg python3 \
     fontconfig libXcomposite libXcursor libXdamage libXrandr libXScrnSaver alsa-lib atk at-spi2-atk at-spi2-core cups-libs gtk3 libdrm libxshmfence libgbm libXtst nss libxkbcommon && \
