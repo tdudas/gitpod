@@ -39,9 +39,9 @@ RUN dnf -y install \
     xorg-x11-server-Xvfb x11vnc tigervnc-server tigervnc \
     chromium novnc procps \
     gnupg python3 \
-    fontconfig libXcomposite libXcursor libXdamage libXrandr libXScrnSaver alsa-lib atk at-spi2-atk at-spi2-core cups-libs gtk3 libdrm libxshmfence libgbm libXtst nss libxkbcommon && \
-    dnf -y groupinstall "Xfce" \
-    dnf clean all
+    fontconfig libXcomposite libXcursor libXdamage libXrandr libXScrnSaver alsa-lib atk at-spi2-atk at-spi2-core cups-libs gtk3 libdrm libxshmfence libgbm libXtst nss libxkbcommon \
+    && dnf -y groupinstall "Xfce" \
+    && dnf clean all
 ##
 
 ENV TZ=UTC
