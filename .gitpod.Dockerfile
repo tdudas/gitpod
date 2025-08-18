@@ -22,6 +22,7 @@ RUN dnf install -y epel-release
 
 RUN dnf -y update && \
     dnf install -y --allowerasing \
+      epel-release \
       unzip git wget \
       curl tmux procps-ng \
       bind-utils telnet \
@@ -33,8 +34,7 @@ RUN dnf -y update && \
       && dnf clean all
 
 ## VNC PACKAGES
-RUN dnf -y install epel-release && \
-    dnf -y install \
+RUN dnf -y install \
     xfce4-panel xfce4-session xfce4-settings xfconf xfce4-terminal \
     xorg-x11-server-Xvfb x11vnc tigervnc-server tigervnc \
     chromium novnc procps \
