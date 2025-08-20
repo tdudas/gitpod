@@ -13,12 +13,14 @@ tasks:
   - name: "bashrc"
     init: |
       cp bashrc ~/.bashrc
-      source ~/.bashrc
   - name: "vnc startup"
     init: |
       mkdir -p ~/.vnc
       cp vnc_xstartup ~/.vnc/xstartup
       chmod +x ~/.vnc/xstartup
+  - name: "load bashrc"
+    init: |
+      source ~/.bashrc
 
 
 ports:
