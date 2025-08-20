@@ -3,24 +3,24 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - name: Setup Environment & Install Dependencies
-    init: |
-      echo "Environment setup complete!"
   - name: "AWS profiles"
-    init: |
+    command: |
       mkdir -p ~/.aws
       cp aws_profiles ~/.aws/config
   - name: "bashrc"
-    init: |
+    command: |
       cp bashrc ~/.bashrc
   - name: "vnc startup"
-    init: |
+    command: |
       mkdir -p ~/.vnc
       cp vnc_xstartup ~/.vnc/xstartup
       chmod +x ~/.vnc/xstartup
   - name: "load bashrc"
-    init: |
+    command: |
       source ~/.bashrc
+  - name: Setup Environment & Install Dependencies
+    init: |
+      echo "Environment setup complete!"
 
 
 ports:
