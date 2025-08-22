@@ -6,10 +6,9 @@ tasks:
   - name: "setup"
     before: |
       mkdir -p ~/.aws
-      cp aws_profiles ~/.aws/config
-      cp bashrc ~/.bashrc
+      cp config/aws_profiles ~/.aws/config
       mkdir -p ~/.vnc
-      cp vnc_xstartup ~/.vnc/xstartup
+      cp config/vnc_xstartup ~/.vnc/xstartup
       chmod +x ~/.vnc/xstartup
   - name: "setup complete"
     init: |

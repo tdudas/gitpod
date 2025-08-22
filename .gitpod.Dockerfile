@@ -77,12 +77,11 @@ RUN /bin/bash -c "$(curl -fsSL https://mise.run)"
 
 ENV PATH="/home/gitpod/.local/bin:${PATH}"
 
-COPY mise_config.toml /home/gitpod/.config/mise/config.toml
+COPY config/mise_config.toml /home/gitpod/.config/mise/config.toml
+COPY config/bashrc /home/gitpod/.bashrc
 
 RUN mkdir -p /home/gitpod/.config/mise && \
     mise install
-
-RUN echo 'eval "$(/home/gitpod/.local/bin/mise activate bash)"' >> /home/gitpod/.bashrc
 
 USER root
 
