@@ -3,10 +3,10 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - name: "Setup tools"
-    init: |
-      echo "Installing tools via mise..."
-      mise install
+#   - name: "Setup tools"
+#     init: |
+#       echo "Installing tools via mise..."
+#       mise install
   - name: "setup"
     before: |
       mkdir -p ~/.aws
