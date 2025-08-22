@@ -80,8 +80,10 @@ ENV PATH="/home/gitpod/.local/bin:${PATH}"
 COPY config/mise_config.toml /home/gitpod/.config/mise/config.toml
 COPY config/bashrc /home/gitpod/.bashrc
 
-RUN mkdir -p /home/gitpod/.config/mise && \
-    mise install
+RUN mkdir -p /home/gitpod/.config/mise
+
+# RUN mkdir -p /home/gitpod/.config/mise && \
+#     mise install
 
 USER root
 
