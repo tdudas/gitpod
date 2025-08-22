@@ -11,12 +11,15 @@ tasks:
       mkdir -p ~/.vnc
       cp vnc_xstartup ~/.vnc/xstartup
       chmod +x ~/.vnc/xstartup
-      source ~/.bashrc
-  - name: "AWS profiles"
-    command: |
-      mkdir -p ~/.aws
-      cp aws_profiles ~/.aws/config
+  - name: "setup complete"
+    init: |
+      echo "Environment setup complete!"
 
+#   - name: "AWS profiles"
+    # command: |
+    #   mkdir -p ~/.aws
+    #   cp aws_profiles ~/.aws/config
+#
 #   - name: "bashrc"
   #   command: |
   #     cp bashrc ~/.bashrc
