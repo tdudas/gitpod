@@ -27,7 +27,7 @@ RUN dnf -y update && \
       curl tmux procps-ng \
       bind-utils telnet \
       tar gzip findutils shadow-utils \
-      which hostname \
+      which hostname jq \
       dnf-plugins-core \
       bash-completion openldap-clients \
       sudo vim net-tools \
